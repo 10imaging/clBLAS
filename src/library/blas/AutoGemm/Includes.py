@@ -113,7 +113,7 @@ class KernelBinaryIncludes:
     self.cppStr += "unsigned char *%s_bin = 0;\n" % kernelName
     self.cppStr += "        size_t %s_binSize = 0;\n" % kernelName
     self.cppStr += "#else\n"
-    self.cppStr += "#pragma message(\"AutoGemmKernelBinaries.cpp: %s was pre-compiled.\")\n" % kernelName
+    # self.cppStr += "#pragma message(\"AutoGemmKernelBinaries.cpp: %s was pre-compiled.\")\n" % kernelName
     self.cppStr += "#endif\n"
 
     kernelName = kernel.getRowName()
@@ -123,7 +123,7 @@ class KernelBinaryIncludes:
     self.cppStr += "unsigned char *%s_bin = 0;\n" % kernelName
     self.cppStr += "        size_t %s_binSize = 0;\n" % kernelName
     self.cppStr += "#else\n"
-    self.cppStr += "#pragma message(\"AutoGemmKernelBinaries.cpp: %s was pre-compiled.\")\n" % kernelName
+    # self.cppStr += "#pragma message(\"AutoGemmKernelBinaries.cpp: %s was pre-compiled.\")\n" % kernelName
     self.cppStr += "#endif\n"
 
     kernelName = kernel.getColName()
@@ -133,7 +133,7 @@ class KernelBinaryIncludes:
     self.cppStr += "unsigned char *%s_bin = 0;\n" % kernelName
     self.cppStr += "        size_t %s_binSize = 0;\n" % kernelName
     self.cppStr += "#else\n"
-    self.cppStr += "#pragma message(\"AutoGemmKernelBinaries.cpp: %s was pre-compiled.\")\n" % kernelName
+    # self.cppStr += "#pragma message(\"AutoGemmKernelBinaries.cpp: %s was pre-compiled.\")\n" % kernelName
     self.cppStr += "#endif\n"
 
     kernelName = kernel.getCornerName()
@@ -143,7 +143,7 @@ class KernelBinaryIncludes:
     self.cppStr += "unsigned char *%s_bin = 0;\n" % kernelName
     self.cppStr += "        size_t %s_binSize = 0;\n" % kernelName
     self.cppStr += "#else\n"
-    self.cppStr += "#pragma message(\"AutoGemmKernelBinaries.cpp: %s was pre-compiled.\")\n" % kernelName
+    # self.cppStr += "#pragma message(\"AutoGemmKernelBinaries.cpp: %s was pre-compiled.\")\n" % kernelName
     self.cppStr += "#endif\n"
 
     self.incFile.write( self.incStr )
@@ -425,7 +425,7 @@ class CppKernelEnumeration:
 # Write Includes
 ################################################################################
 def writeIncludes():
-  print "AutoGemm.py: Generating include files."
+  print("AutoGemm.py: Generating include files.")
   if not os.path.exists( Common.getIncludePath() ):
     os.makedirs( Common.getIncludePath() )
 
@@ -490,5 +490,5 @@ if __name__ == "__main__":
   if len(sys.argv) == 2:
     Common.setOutputPath(sys.argv[1])
   else:
-    print "Warning: No output path specified; default is working directory."
+    print("Warning: No output path specified; default is working directory.")
   writeIncludes()
